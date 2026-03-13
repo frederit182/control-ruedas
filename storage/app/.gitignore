@@ -1,3 +1,7 @@
 *
+<<<<<<< HEAD
+=======
+!private/
+>>>>>>> 8c04070 (Trabajo inicial: base Laravel y configuración)
 !public/
 !.gitignore

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -17,3 +18,10 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 }
+=======
+test('returns a successful response', function () {
+    $response = $this->get(route('home'));
+
+    $response->assertOk();
+});
+>>>>>>> 8c04070 (Trabajo inicial: base Laravel y configuración)

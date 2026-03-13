@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 
+<<<<<<< HEAD
 /*
 |--------------------------------------------------------------------------
 | Console Routes
@@ -14,6 +15,8 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
+=======
+>>>>>>> 8c04070 (Trabajo inicial: base Laravel y configuración)
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');

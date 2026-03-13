@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,16 @@ Route::get('/', function () {
 use App\Http\Controllers\TipoRuedaController;
 
 Route::get('/tipos-rueda', [TipoRuedaController::class, 'index']);
+=======
+use Laravel\Fortify\Features;
+
+Route::inertia('/', 'Welcome', [
+    'canRegister' => Features::enabled(Features::registration()),
+])->name('home');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::inertia('dashboard', 'Dashboard')->name('dashboard');
+});
+
+require __DIR__.'/settings.php';
+>>>>>>> 8c04070 (Trabajo inicial: base Laravel y configuración)

@@ -1,10 +1,15 @@
 <?php
 
+<<<<<<< HEAD
 use Illuminate\Contracts\Http\Kernel;
+=======
+use Illuminate\Foundation\Application;
+>>>>>>> 8c04070 (Trabajo inicial: base Laravel y configuración)
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
+<<<<<<< HEAD
 /*
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance
@@ -16,10 +21,14 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
+=======
+// Determine if the application is in maintenance mode...
+>>>>>>> 8c04070 (Trabajo inicial: base Laravel y configuración)
 if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
     require $maintenance;
 }
 
+<<<<<<< HEAD
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
@@ -53,3 +62,13 @@ $response = $kernel->handle(
 )->send();
 
 $kernel->terminate($request, $response);
+=======
+// Register the Composer autoloader...
+require __DIR__.'/../vendor/autoload.php';
+
+// Bootstrap Laravel and handle the request...
+/** @var Application $app */
+$app = require_once __DIR__.'/../bootstrap/app.php';
+
+$app->handleRequest(Request::capture());
+>>>>>>> 8c04070 (Trabajo inicial: base Laravel y configuración)

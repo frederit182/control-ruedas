@@ -2,7 +2,15 @@
 
 namespace App\Providers;
 
+<<<<<<< HEAD
 use Illuminate\Support\ServiceProvider;
+=======
+use Carbon\CarbonImmutable;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Validation\Rules\Password;
+>>>>>>> 8c04070 (Trabajo inicial: base Laravel y configuración)
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +27,32 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+<<<<<<< HEAD
         //
+=======
+        $this->configureDefaults();
+    }
+
+    /**
+     * Configure default behaviors for production-ready applications.
+     */
+    protected function configureDefaults(): void
+    {
+        Date::use(CarbonImmutable::class);
+
+        DB::prohibitDestructiveCommands(
+            app()->isProduction(),
+        );
+
+        Password::defaults(fn (): ?Password => app()->isProduction()
+            ? Password::min(12)
+                ->mixedCase()
+                ->letters()
+                ->numbers()
+                ->symbols()
+                ->uncompromised()
+            : null,
+        );
+>>>>>>> 8c04070 (Trabajo inicial: base Laravel y configuración)
     }
 }

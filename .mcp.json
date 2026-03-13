@@ -1,0 +1,12 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "wsl.exe",
+            "args": [
+                "/home/frederit/.config/herd-lite/bin/php",
+                "/home/frederit/control-ruedas/crtl-ruedas2/artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}
