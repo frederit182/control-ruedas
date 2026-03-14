@@ -1,4 +1,4 @@
-<?php
+?php
 
 use Illuminate\Support\Facades\Route;
 <<<<<<< HEAD
@@ -20,6 +20,7 @@ Route::get('/', function () {
 use App\Http\Controllers\TipoRuedaController;
 
 Route::get('/tipos-rueda', [TipoRuedaController::class, 'index']);
+<<<<<<< HEAD
 =======
 use Laravel\Fortify\Features;
 
@@ -33,3 +34,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 require __DIR__.'/settings.php';
 >>>>>>> 8c04070 (Trabajo inicial: base Laravel y configuración)
+=======
+Route::post('/tipos-rueda', [TipoRuedaController::class, 'store']);
+>>>>>>> cd07f7b (Mejoras sistema tipos de ruedas, diseño y logo)

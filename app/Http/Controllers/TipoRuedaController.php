@@ -12,7 +12,8 @@ class TipoRuedaController extends Controller
      */
     public function index()
 {
-    return view('tipos_rueda.index');
+    $tipos = TipoRueda::all();
+    return view('tipos_rueda.index', compact('tipos'));
 }
 
     /**
@@ -27,9 +28,13 @@ class TipoRuedaController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
-    }
+{
+    $tipo = new TipoRueda();
+    $tipo->nombre = $request->nombre;
+    $tipo->save();
+
+    return redirect('/tipos-rueda');
+}
 
     /**
      * Display the specified resource.
